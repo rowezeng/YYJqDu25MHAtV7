@@ -1,1 +1,207 @@
-
+<!doctype html>
+<html>
+  <head>
+    <title>思凝中文 - Si Ning Chinese</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,500,600|Red+Hat+Text:500&display=swap');
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0;
+        overflow-x:hidden;
+        font-family:'Red Hat Text', 'Noto Sans CS', sans-serif;
+        color:#021;
+      }
+      a{
+        color:#042;
+        text-decoration:none;
+      }
+      .ch{
+        font-family: 'Noto Sans SC', serif;
+        font-weight:500;
+      }
+      #left,#right{
+        padding:1vw;
+        box-sizing:border-box;
+        position:absolute;
+        width:50%;
+        height:100%;
+        overflow-x:hidden;
+      }
+      #left{
+        background-image:linear-gradient(#dfe,#fff);
+        box-shadow:0 0 4vw #bdc;
+      }
+      #right{
+        right:0;
+        background-image:linear-gradient(#bdc,#dfe);
+      }
+      #head{
+        color:#fff;
+        padding:.5vw 0 2vw 0;
+        font-size:10vw;
+        -webkit-text-stroke:1px;
+        text-align:center;
+        background-image:url('river.webp');
+        background-position:center;
+      }
+      #head1{
+        line-height:10px;
+      }
+      #head2{
+        font-size:calc(10pt + 2vw);
+      }
+      #profile-pic{
+        width:15vw;
+        height:15vw;
+        background-image:url('profile.webp');
+        background-size:cover;
+        border-radius:100vw;
+        float:right;
+        margin:1vw 0 1vw 1vw;
+      }
+      .header{
+        font-size:22pt;
+        color:#042;
+        border-bottom:0.2vw solid #042;
+        user-select:none;
+        margin-bottom:1vw;
+      }
+      .desc{
+        font-size:16pt;
+        line-height:18pt;
+        margin-right:2vw;
+      }
+      .profile-header{
+        margin-right:17vw;
+      }
+      #pd-ch{
+        font-weight:400;
+        font-size:20pt;
+        line-height:27pt;
+      }
+      .desc>*{
+        margin-top:8pt;
+      }
+      .div{
+        border-radius:8px;
+        margin:1vw 1vw 2vw 1vw;
+      }
+      .go>.ch{
+        font-size:3vw;
+        font-weight:500;
+      }
+      .go{
+        color:#042;
+        font-size:2.5vw;
+        box-sizing:border-box;
+        padding:.5vw .5vw .5vw 1vw;
+        background-image:linear-gradient(170deg,#fff,#def);
+        height:30.6667%;
+        margin-bottom:1vw;
+        clear:right;
+        overflow:auto;
+      }
+      .switch{
+        background:none;
+        border-radius:5px;
+        border:0.2vw solid #042;
+        width:40pt;
+        height:22pt;
+        margin-left:8pt;
+        white-space:nowrap;
+        display:inline-block;
+        vertical-align:top;
+        text-align:center;
+        cursor:pointer;
+      }
+      .switch:hover{
+        background:#042;
+        color:#fff;
+        border:0.2vw solid #042;
+      }
+      .signup{
+        float:right;
+        margin-top:-6.6vw;
+        margin-right:1.2vw;
+        border-radius:8px;
+        font-size:2.4vw;
+        display:inline;
+        padding:0 .4vw 0 .4vw;
+        border:2pt solid #042;
+      }
+      .signup:hover{
+        background:#042;
+        color:#fff;
+      }
+      @media (max-aspect-ratio:4/3){
+        body{
+          background-image:linear-gradient(#dfe,#fff);
+        }
+        #left,#right{
+          position:relative;
+          padding:3vw;
+          height:auto;
+          width:100%;
+          background:none;
+          box-shadow:none;
+        }
+        #right{
+          height:100%;
+        }
+        .go{
+          background:#fff;
+          box-shadow:0 0 5vw #bdc;
+        }
+      }
+    </style>
+  </head>
+  <body>
+     <!--登录-->
+    <div id='left'>
+      <div class='div ch' id='head'>
+        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div>
+      </div>
+      <div class='div' id='profile'>
+        <div id='profile-pic'></div>
+        <div class='profile-header header' id='ph-en'>About the teacher<span id='pd-switch' class='switch' onclick='switcha("pd");'>中文</span></div>
+        <div class='desc' id='pd-en'>Ms. Zeng is a foreign language teacher with decades of experience.<div>Before coming to the United States, she was an associate professor at Beijing Normal University.</div><div>She taught at Irvine Chinese School from 2017-2018 and is currently the head of Chinese Storytime at the Arcadia Public Library.</div></div>
+        <div class='desc ch' id='pd-ch'>曾思凝来美前是北京师范大学汉语学院的副教授，来美后在尔湾中文学校任教，成功完成中文启蒙教学，中文阅读与写作以及中文书法等多种教学。目前是阿卡迪亚中文故事会的主要发起人和领导者。</div>
+      </div>
+      <div class='div' id='contact'>
+        <div id='contact-header' class='header'>
+          For more information:
+        </div>
+        <div class='desc'><a href='tel:6263532962'>(626) 353-2962</a><div><a href='mailto:rowezeng@gmail.com'>rowezeng@gmail.com</a></div></div>
+      </div>
+    </div>
+    <div id='right'>
+      <div class='div go'><span class='ch'>AP 中文</span><div>AP Chinese</div><a class='signup' href=''>Sign up</a></div>
+      <div class='div go'><span class='ch'>听写和读书</span><div>Listening, reading, & writing</div><a class='signup' href=''>Sign up</a></div>
+      <div class='div go'><span class='ch'>拼音，书法，和毛笔字</span><div>Pinyin & calligraphy</div><a class='signup' href=''>Sign up</a></div>
+    </div>
+    <script>
+    switcha('pd');
+    var i = 0;
+    function switcha(thing){
+      var en=thing+'-en';
+      var ch=thing+'-ch';
+      var bu=thing+'-switch'
+      if(2>++i){
+        document.getElementById(en).style.display='none';
+        document.getElementById(ch).style.display='block';
+        document.getElementById(bu).innerHTML='en';
+        document.getElementById(bu).style.fontWeight='500';
+        document.getElementById(bu).style.fontSize='16pt';
+      }else{
+        document.getElementById(ch).style.display='none';
+        document.getElementById(en).style.display='block';
+        document.getElementById(bu).innerHTML='中文';
+        document.getElementById(bu).style.fontWeight='600';
+        document.getElementById(bu).style.fontSize='14pt';
+        i=0;
+      }
+    }
+    </script>
+  </body>
+</html>
