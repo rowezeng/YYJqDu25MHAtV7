@@ -11,6 +11,7 @@
         overflow-x:hidden;
         font-family:'Red Hat Text', 'Noto Sans CS', sans-serif;
         color:#021;
+        background-image:linear-gradient(#bdc,#fff);
       }
       a{
         color:#042;
@@ -25,12 +26,12 @@
         top:0;
         width:100%;
         height:100%;
-        background-image:linear-gradient(#bdc,#fff);
         z-index:99;
         opacity:0;
         pointer-events:none;
       }
       #load0{
+        background:#fff;
         animation:load0 3s ease;
       }
       #load1{
@@ -38,22 +39,33 @@
         animation:load1 3s ease;
       }
       #load2{
+        background-image:linear-gradient(#bdc,#fff);
         animation:load2 3s ease;
+      }
+      #load3{
+        background-image:linear-gradient(#fff,#bdc);
+        animation:load3 3s ease;
       }
       @keyframes load0{
         0% {opacity:1}
-        33%{opacity:0}
+        25%{opacity:0}
         100%{opacity:0;pointer-events:none}
       }
       @keyframes load1{
         0% {opacity:1}
-        33% {opacity:1}
-        66%{opacity:0}
+        25% {opacity:1}
+        50%{opacity:0}
         100%{opacity:0;pointer-events:none}
       }
       @keyframes load2{
         0% {opacity:1}
-        66% {opacity:1}
+        50% {opacity:1}
+        75%{opacity:0}
+        100%{opacity:0;pointer-events:none}
+      }
+      @keyframes load3{
+        0% {opacity:1}
+        75% {opacity:1}
         99%{opacity:0}
         100%{opacity:0;pointer-events:none}
       }
@@ -74,6 +86,7 @@
         background-image:linear-gradient(#bdc,#dfe);
       }
       #head{
+        position:relative;
         color:#fff;
         padding:.5vw 0 2vw 0;
         font-size:10vw;
@@ -97,31 +110,30 @@
         float:right;
         margin:1vw 0 1vw 1vw;
       }
-      .header{
+      header{
         font-size:22pt;
         color:#042;
-        border-bottom:0.2vw solid #042;
+        border-bottom:2pt solid #042;
         user-select:none;
-        margin-bottom:1vw;
+        margin-bottom:2pt;
       }
-      .desc{
+      .en>p{
         font-size:16pt;
-        line-height:18pt;
+        line-height:120%;
         margin-right:2vw;
+        margin-bottom:-8pt;
       }
       .profile-header{
         margin-right:17vw;
       }
-      #pd-ch{
+      .ch>p{
         font-weight:400;
         font-size:20pt;
-        line-height:27pt;
-      }
-      .desc>*{
-        margin-top:8pt;
+        line-height:26pt;
+        margin-bottom:-8pt;
       }
       .div{
-        border-radius:8px;
+        border-radius:2vw;
         margin:1vw 1vw 2vw 1vw;
       }
       .go>.ch{
@@ -129,43 +141,43 @@
         font-weight:500;
       }
       .go{
+        position:relative;
         color:#042;
         font-size:2.5vw;
         box-sizing:border-box;
-        padding:.5vw .5vw .5vw 1vw;
+        padding:1vw 1vw 1vw 1.5vw;
         background-image:linear-gradient(170deg,#fff,#def);
         height:30.6667%;
         margin-bottom:1vw;
-        clear:right;
         overflow:auto;
       }
       .switch{
+        position:absolute;
         background:none;
         border-radius:5px;
-        border:0.2vw solid #042;
+        border:2pt solid #fff;
         width:40pt;
         height:22pt;
-        margin-left:8pt;
+        right:2.5vw;
+        bottom:2.5vw;
         white-space:nowrap;
-        display:inline-block;
-        vertical-align:top;
         text-align:center;
         cursor:pointer;
       }
       .switch:hover{
-        background:#042;
-        color:#fff;
-        border:0.2vw solid #042;
+        background:#fff;
+        color:#021;
       }
       .signup{
-        float:right;
-        margin-top:-6.6vw;
-        margin-right:1.2vw;
-        border-radius:8px;
+        position:absolute;
+        top:1.7vw;
+        right:1.7vw;
+        border-radius:8pt;
         font-size:2.4vw;
         display:inline;
         padding:0 .4vw 0 .4vw;
         border:2pt solid #042;
+        display:inline-block;
       }
       .signup:hover{
         background:#042;
@@ -186,6 +198,10 @@
         #right{
           height:100%;
         }
+        #profile-pic{
+          width:30vw;
+          height:30vw;
+        }
         .go{
           background:#fff;
           box-shadow:0 0 5vw #bdc;
@@ -194,30 +210,31 @@
     </style>
   </head>
   <body>
+    <div id='load3' class='load'></div>
     <div id='load2' class='load'></div>
     <div id='load1' class='load'></div>
     <div id='load0' class='load'></div>
      <!--登录-->
     <div id='left'>
       <div class='div ch' id='head'>
-        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div>
+        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='pd-switch' class='switch' onclick='switcha("pd");'>中文</div>
       </div>
       <div class='div' id='profile'>
         <div id='profile-pic'></div>
-        <div class='profile-header header' id='ph-en'>About the teacher<span id='pd-switch' class='switch' onclick='switcha("pd");'>中文</span></div>
-        <div class='desc' id='pd-en'>Ms. Zeng is a foreign language teacher with decades of experience.<div>Before coming to the United States, she was an associate professor at Beijing Normal University.</div><div>She taught at Irvine Chinese School from 2017-2018 and is currently the head of Chinese Storytime at the Arcadia Public Library.</div></div>
-        <div class='desc ch' id='pd-ch'>曾思凝来美前是北京师范大学汉语学院的副教授，来美后在尔湾中文学校任教，成功完成中文启蒙教学，中文阅读与写作以及中文书法等多种教学。目前是阿卡迪亚中文故事会的主要发起人和领导者。</div>
+        <header class='profile-header' id='ph-en'>About the teacher</header>
+        <span class='desc en' id='pd-en'><p>Ms. Zeng is a foreign language teacher with decades of experience.</p><p>Before coming to the United States, she was an associate professor at Beijing Normal University.</p><p>She taught at Irvine Chinese School from 2017-2018 and is currently the head of Chinese Storytime at the Arcadia Public Library.</p></span>
+        <span class='desc ch' id='pd-ch'><p>曾思凝来美前是北京师范大学汉语学院的副教授，来美后在尔湾中文学校任教，成功完成中文启蒙教学，中文阅读与写作以及中文书法等多种教学。目前是阿卡迪亚中文故事会的主要发起人和领导者.</p></span>
       </div>
       <div class='div' id='contact'>
-        <div id='contact-header' class='header'>
+        <header id='contact-header'>
           For more information:
-        </div>
+        </header>
         <div class='desc'><a href='tel:6263532962'>(626) 353-2962</a><div><a href='mailto:rowezeng@gmail.com'>rowezeng@gmail.com</a></div></div>
       </div>
     </div>
     <div id='right'>
       <div class='div go'><span class='ch'>AP 中文</span><div>AP Chinese</div><a class='signup' href='https://forms.gle/xj2UokgBXZNk5gKM8'>Sign up</a></div>
-      <div class='div go'><span class='ch'>听说读写</span><div>Listening, reading, & writing</div><a class='signup' href='https://forms.gle/5B2r9pNBzAWZWi3L6'>Sign up</a></div>
+      <div class='div go'><span class='ch'>听说读写</span><div>Listening, speaking,<br>reading, & writing</div><a class='signup' href='https://forms.gle/5B2r9pNBzAWZWi3L6'>Sign up</a></div>
       <div class='div go'><span class='ch'>拼音和书法</span><div>Pinyin & calligraphy</div><a class='signup' href='https://forms.gle/UJewgJsfmhqm35Zz9'>Sign up</a></div>
     </div>
     <script>
