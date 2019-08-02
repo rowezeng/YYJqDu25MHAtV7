@@ -3,7 +3,7 @@
   <head>
     <title>思凝中文 - Si Ning Chinese</title>
     <style>
-      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,500,600|Red+Hat+Text:500&display=swap');
+      @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,500,600|Red+Hat+Text:500&display=block');
       html,body{
         width:100%;
         height:100%;
@@ -19,6 +19,43 @@
       .ch{
         font-family: 'Noto Sans SC', serif;
         font-weight:500;
+      }
+      .load{
+        position:fixed;
+        top:0;
+        width:100%;
+        height:100%;
+        background-image:linear-gradient(#bdc,#fff);
+        z-index:99;
+        opacity:0;
+        pointer-events:none;
+      }
+      #load0{
+        animation:load0 3s ease;
+      }
+      #load1{
+        background-image:linear-gradient(#fff,#bdc);
+        animation:load1 3s ease;
+      }
+      #load2{
+        animation:load2 3s ease;
+      }
+      @keyframes load0{
+        0% {opacity:1}
+        33%{opacity:0}
+        100%{opacity:0;pointer-events:none}
+      }
+      @keyframes load1{
+        0% {opacity:1}
+        33% {opacity:1}
+        66%{opacity:0}
+        100%{opacity:0;pointer-events:none}
+      }
+      @keyframes load2{
+        0% {opacity:1}
+        66% {opacity:1}
+        99%{opacity:0}
+        100%{opacity:0;pointer-events:none}
       }
       #left,#right{
         padding:1vw;
@@ -157,6 +194,9 @@
     </style>
   </head>
   <body>
+    <div id='load2' class='load'></div>
+    <div id='load1' class='load'></div>
+    <div id='load0' class='load'></div>
      <!--登录-->
     <div id='left'>
       <div class='div ch' id='head'>
@@ -177,8 +217,8 @@
     </div>
     <div id='right'>
       <div class='div go'><span class='ch'>AP 中文</span><div>AP Chinese</div><a class='signup' href=''>Sign up</a></div>
-      <div class='div go'><span class='ch'>听写和读书</span><div>Listening, reading, & writing</div><a class='signup' href=''>Sign up</a></div>
-      <div class='div go'><span class='ch'>拼音，书法，和毛笔字</span><div>Pinyin & calligraphy</div><a class='signup' href=''>Sign up</a></div>
+      <div class='div go'><span class='ch'>听说读写</span><div>Listening, reading, & writing</div><a class='signup' href=''>Sign up</a></div>
+      <div class='div go'><span class='ch'>拼音和书法</span><div>Pinyin & calligraphy</div><a class='signup' href=''>Sign up</a></div>
     </div>
     <script>
     switcha('pd');
