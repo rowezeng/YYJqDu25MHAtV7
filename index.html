@@ -167,8 +167,9 @@
         white-space:nowrap;
         text-align:center;
         cursor:pointer;
+        user-select:none;
       }
-      #switch:hover{
+      #switch:hover,#switch:focus{
         background:#fff;
         color:#021;
       }
@@ -266,6 +267,7 @@
             bu.innerHTML='en';
             bu.style.fontWeight='500';
             bu.style.fontSize='16pt';
+            bu.title='Read this page in English / 变成英文'
           }
         }else{
           for(var j = 0;j<ch.length;j++){
@@ -274,6 +276,7 @@
             bu.innerHTML='中文';
             bu.style.fontWeight='600';
             bu.style.fontSize='14pt';
+            bu.title='Read this page in Chinese / 变成中文'
           }
           i=0;
         }
