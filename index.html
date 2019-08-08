@@ -149,7 +149,7 @@
         margin-bottom:2vw;
         overflow:auto;
       }
-      .switch{
+      #switch{
         position:absolute;
         background:none;
         border-radius:5px;
@@ -162,7 +162,7 @@
         text-align:center;
         cursor:pointer;
       }
-      .switch:hover{
+      #switch:hover{
         background:#fff;
         color:#021;
       }
@@ -181,7 +181,7 @@
         background:#042;
         color:#fff;
       }
-      @media (max-aspect-ratio:11/7){
+      @media (max-aspect-ratio:4/3){
         body{
           background-image:linear-gradient(#dfe,#fff);
         }
@@ -221,7 +221,7 @@
     <!--登录-->
     <div id='left'>
       <div class='div ch' id='head'>
-        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='pd-switch' class='switch' onclick='switcha("pd");'>中文</div>
+        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='switch' onclick='switcha();'>中文</div>
       </div>
       <div class='div' id='profile'>
         <div id='profile-pic'></div>
@@ -232,6 +232,7 @@
       <div class='div' id='courses'>
         <header class='cr-header' id='cr-en'>Class schedule</header>
         <span class='desc en' id='cr-en'><p>Each course will have 2 lessons a week, for a total of 80 lessons taught from August 9th to May 22nd. Each lesson will last 90 minutes. </p></span>
+        <span class='desc ch' id='cr-ch'><p>课程表每门课每周上两次，每次课时90分钟。从八月九号到明年五月二十二号总共上80节课。</p></span>
       </div>
       <div class='div' id='contact'>
         <header id='contact-header'>
@@ -248,22 +249,26 @@
     <script>
       switcha('pd');
       var i = 0;
-      function switcha(thing){
-        var en=thing+'-en';
-        var ch=thing+'-ch';
-        var bu=thing+'-switch'
+      function switcha(){
+        var en = document.getElementsByClassName('desc en');
+        var ch = document.getElementsByClassName('desc ch');
+        var bu= document.getElementById('switch');
         if(2>++i){
-          document.getElementById(en).style.display='none';
-          document.getElementById(ch).style.display='block';
-          document.getElementById(bu).innerHTML='en';
-          document.getElementById(bu).style.fontWeight='500';
-          document.getElementById(bu).style.fontSize='16pt';
+          for(var j = 0;j<en.length;j++){
+            en[j].style.display='none';
+            ch[j].style.display='block';
+            bu.innerHTML='en';
+            bu.style.fontWeight='500';
+            bu.style.fontSize='16pt';
+          }
         }else{
-          document.getElementById(ch).style.display='none';
-          document.getElementById(en).style.display='block';
-          document.getElementById(bu).innerHTML='中文';
-          document.getElementById(bu).style.fontWeight='600';
-          document.getElementById(bu).style.fontSize='14pt';
+          for(var j = 0;j<ch.length;j++){
+            ch[j].style.display='none';
+            en[j].style.display='block';
+            bu.innerHTML='中文';
+            bu.style.fontWeight='600';
+            bu.style.fontSize='14pt';
+          }
           i=0;
         }
       }
