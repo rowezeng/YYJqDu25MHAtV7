@@ -117,7 +117,7 @@
         user-select:none;
         margin-bottom:2pt;
       }
-      .en>p{
+      .desc>p{
         font-size:16pt;
         line-height:120%;
         margin-right:2vw;
@@ -214,26 +214,26 @@
     <div id='load2' class='load'></div>
     <div id='load1' class='load'></div>
     <div id='load0' class='load'></div>
-     <!--登录-->
+    <!--登录-->
     <div id='left'>
       <div class='div ch' id='head'>
         <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='pd-switch' class='switch' onclick='switcha("pd");'>中文</div>
+      </div>
+      <div class='div' id='profile'>
+        <div id='profile-pic'></div>
+        <header class='profile-header' id='ph-en'>About&nbsp;the&nbsp;teacher</header>
+        <span class='desc en' id='pd-en'><p>Ms. Zeng Si Ning is a foreign language teacher with decades of experience. Before coming to the United States, she was an associate professor at Beijing Normal University. She taught at Irvine Chinese School from 2016-2018 and is currently the head of Chinese Storytime at the Arcadia Public Library.</p></span>
+        <span class='desc ch' id='pd-ch'><p>曾思凝来美前是北京师范大学汉语学院的副教授，来美后在尔湾中文学校任教，成功完成中文启蒙教学，中文阅读与写作以及中文书法等多种教学。目前是阿卡迪亚中文故事会的主要发起人和领导者.</p></span>
       </div>
       <div class='div' id='courses'>
         <header class='cr-header' id='cr-en'>Class schedule</header>
         <span class='desc en' id='cr-en'><p>Each course will have 2 lessons a week, for a total of 80 lessons taught from August 9th to May 22nd. Each lesson will last 90 minutes. </p></span>
       </div>
-      <div class='div' id='profile'>
-        <div id='profile-pic'></div>
-        <header class='profile-header' id='ph-en'>About the teacher</header>
-        <span class='desc en' id='pd-en'><p>Ms. Zeng Si Ning is a foreign language teacher with decades of experience. Before coming to the United States, she was an associate professor at Beijing Normal University. She taught at Irvine Chinese School from 2016-2018 and is currently the head of Chinese Storytime at the Arcadia Public Library.</p></span>
-        <span class='desc ch' id='pd-ch'><p>曾思凝来美前是北京师范大学汉语学院的副教授，来美后在尔湾中文学校任教，成功完成中文启蒙教学，中文阅读与写作以及中文书法等多种教学。目前是阿卡迪亚中文故事会的主要发起人和领导者.</p></span>
-      </div>
       <div class='div' id='contact'>
         <header id='contact-header'>
           For more information:
         </header>
-        <span class='desc'><a href='tel:6263532962'>(626) 353-2962</a><div><a href='mailto:rowezeng@gmail.com'>rowezeng@gmail.com</a></div></span>
+        <span class='desc'><p><a href='tel:6263532962'>(626) 353-2962</a><br><a href='mailto:rowezeng@gmail.com'>rowezeng@gmail.com</a></p></span>
       </div>
     </div>
     <div id='right'>
@@ -242,27 +242,27 @@
       <div class='div go'><span class='ch'>拼音和书法</span><div>Pinyin & calligraphy</div><a class='signup' href='https://forms.gle/UJewgJsfmhqm35Zz9'>Sign up</a></div>
     </div>
     <script>
-    switcha('pd');
-    var i = 0;
-    function switcha(thing){
-      var en=thing+'-en';
-      var ch=thing+'-ch';
-      var bu=thing+'-switch'
-      if(2>++i){
-        document.getElementById(en).style.display='none';
-        document.getElementById(ch).style.display='block';
-        document.getElementById(bu).innerHTML='en';
-        document.getElementById(bu).style.fontWeight='500';
-        document.getElementById(bu).style.fontSize='16pt';
-      }else{
-        document.getElementById(ch).style.display='none';
-        document.getElementById(en).style.display='block';
-        document.getElementById(bu).innerHTML='中文';
-        document.getElementById(bu).style.fontWeight='600';
-        document.getElementById(bu).style.fontSize='14pt';
-        i=0;
+      switcha('pd');
+      var i = 0;
+      function switcha(thing){
+        var en=thing+'-en';
+        var ch=thing+'-ch';
+        var bu=thing+'-switch'
+        if(2>++i){
+          document.getElementById(en).style.display='none';
+          document.getElementById(ch).style.display='block';
+          document.getElementById(bu).innerHTML='en';
+          document.getElementById(bu).style.fontWeight='500';
+          document.getElementById(bu).style.fontSize='16pt';
+        }else{
+          document.getElementById(ch).style.display='none';
+          document.getElementById(en).style.display='block';
+          document.getElementById(bu).innerHTML='中文';
+          document.getElementById(bu).style.fontWeight='600';
+          document.getElementById(bu).style.fontSize='14pt';
+          i=0;
+        }
       }
-    }
     </script>
   </body>
 </html>
