@@ -17,7 +17,8 @@
         overflow-x:hidden;
         font-family:'Red Hat Text', 'Noto Sans CS', sans-serif;
         color:#021;
-        background-image:linear-gradient(#bdc,#fff);
+        background-color:#dfe;
+        opacity:1;
       }
       a{
         color:#042;
@@ -85,15 +86,17 @@
       }
       #left{
         background-image:linear-gradient(#dfe,#fff);
-        box-shadow:0 0 4vw #bdc;
       }
       #right{
+        height:auto;
+        border-radius:2vw 0 0 0;
         right:0;
         background-image:linear-gradient(#bdc,#dfe);
       }
       #head{
         position:relative;
         color:#fff;
+        margin:2vw;
         padding:.5vw 0 2vw 0;
         font-size:10vw;
         -webkit-text-stroke:1px;
@@ -201,7 +204,8 @@
           box-shadow:none;
         }
         #right{
-          height:100%;
+          height:auto;
+          border-radius:0;
           overflow:wrap;
         }
         #profile-pic{
@@ -218,6 +222,11 @@
           margin-bottom:4vw
         }
       }
+      .imgur-embed-pub{
+        width:90%;
+        height:40%;
+        margin-left:5%;
+      }
     </style>
   </head>
   <body>
@@ -226,10 +235,17 @@
     <div id='load1' class='load'></div>
     <div id='load0' class='load'></div>
     <!--登录-->
+    <div class='div ch' id='head'>
+      <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='switch' onclick='switcha();'>中文</div>
+    </div>
+    <div id='right'>
+      <div class='div go'><span class='ch'>AP 中文</span><div>AP Chinese</div><a class='signup' href='https://forms.gle/xj2UokgBXZNk5gKM8'>Sign up</a></div>
+      <div class='div go'><span class='ch'>听说读写</span><div>Listening, speaking,<br>reading, & writing</div><a class='signup' href='https://forms.gle/5B2r9pNBzAWZWi3L6'>Sign up</a></div>
+      <div class='div go'><span class='ch'>拼音和书法</span><div>Pinyin & calligraphy</div><a class='signup' href='https://forms.gle/UJewgJsfmhqm35Zz9'>Sign up</a></div>
+      <blockquote class="imgur-embed-pub" lang="en" data-id="a/Rgf82L9"  ><a href="//imgur.com/a/Rgf82L9">Gallery | 思凝中文 - Si Ning Chinese</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+    </div>
+
     <div id='left'>
-      <div class='div ch' id='head'>
-        <span id='head1'>思凝中文</span><div id='head2'>Si Ning Chinese</div><div id='switch' onclick='switcha();'>中文</div>
-      </div>
       <div class='div' id='profile'>
         <div id='profile-pic'></div>
         <header class='profile-header' id='ph-en'>About the teacher</header>
@@ -247,12 +263,6 @@
         </header>
         <span class='desc'><p><a href='tel:6263532962'>(626) 353-2962</a><br><a href='mailto:rowezeng@gmail.com'>rowezeng@gmail.com</a></p></span>
       </div>
-    </div>
-    <div id='right'>
-      <div class='div go'><span class='ch'>AP 中文</span><div>AP Chinese</div><a class='signup' href='https://forms.gle/xj2UokgBXZNk5gKM8'>Sign up</a></div>
-      <div class='div go'><span class='ch'>听说读写</span><div>Listening, speaking,<br>reading, & writing</div><a class='signup' href='https://forms.gle/5B2r9pNBzAWZWi3L6'>Sign up</a></div>
-      <div class='div go'><span class='ch'>拼音和书法</span><div>Pinyin & calligraphy</div><a class='signup' href='https://forms.gle/UJewgJsfmhqm35Zz9'>Sign up</a></div>
-      <blockquote class="imgur-embed-pub" lang="en" data-id="a/Rgf82L9"  ><a href="//imgur.com/a/Rgf82L9">Gallery | 思凝中文 - Si Ning Chinese</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>    
     </div>
     <script>
       switcha('pd');
